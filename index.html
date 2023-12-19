@@ -10,7 +10,6 @@
 
 <div id="nameEntryScreen" class="screen">
     <h1>Wheel of Money</h1>
-    <label for="nameInput">What is your name?</label>
     <input type="text" id="nameInput" placeholder="Enter your name">
     <button id="submitName">Submit</button>
 </div>
@@ -20,10 +19,12 @@
     <p>You have <span id="spinsLeft">3</span> spins remaining</p>
     <p>Total winnings: $<span id="totalWinnings">0</span></p>
     <button id="spinButton">SPIN</button>
+    <!-- You might want to use a canvas or an image here for the wheel -->
 </div>
 
 <div id="spinResultsScreen" class="screen hidden">
-    <p><span id="spinOutcome"></span> says:</p>
+    <!-- This will show the result of the spin -->
+    <p id="spinOutcome"></p>
     <p>You won $<span id="spinWinnings">0</span>!</p>
     <button id="nextSpin">Next Spin</button>
 </div>
