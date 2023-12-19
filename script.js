@@ -6,10 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const spinsLeftElement = document.getElementById('spinsLeft');
     const totalWinningsElement = document.getElementById('totalWinnings');
     const spinWinningsElement = document.getElementById('spinWinnings');
-    
+    const wheel = document.getElementById('wheel'); // The wheel image
+
     let playerName = '';
     let totalWinnings = 0;
     let spinsLeft = 3;
+    let lastSpinResult = null;
 
     function showScreen(screen) {
         nameEntryScreen.classList.add('hidden');
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spinResultsScreen.classList.add('hidden');
         screen.classList.remove('hidden');
     }
-    
+
     document.getElementById('submitName').addEventListener('click', function() {
         playerName = document.getElementById('nameInput').value;
         if (playerName.trim() === '') {
@@ -28,8 +30,23 @@ document.addEventListener('DOMContentLoaded', function() {
         showScreen(spinWheelScreen);
         updateWinningsAndSpins();
     });
-    
-    document.getElementById('spinButton').addEventListener('click', spinWheel);
+
+    document.getElementById('spinButton').addEventListener('click', function() {
+        wheel.classList.add('spinning'); // Start the spin animation
+
+        // Disable the button while spinning
+        this.setAttribute('disabled', 'disabled');
+
+        // After the spin, calculate the result
+        setTimeout(function() {
+            spinWheel();
+            wheel.classList.remove('spinning'); // Reset the wheel for the next spin
+
+            // Re-enable the spin button
+            document.getElementById('spinButton').removeAttribute('disabled');
+        }, 4000); // This should match the duration of the CSS animation
+    });
+
     document.getElementById('nextSpin').addEventListener('click', function() {
         if (spinsLeft > 0) {
             showScreen(spinWheelScreen);
@@ -45,8 +62,18 @@ document.addEventListener('DOMContentLoaded', function() {
             resetGame();
             return;
         }
-        
-        const spinWinnings = calculateWinnings(playerName);
+
+        let spinWinnings;
+        if (spinsLeft === 3) {
+            spinWinnings = getFirstSpinWinnings();
+        } else if (spinsLeft === 2) {
+            spinWinnings = getSecondSpinWinnings();
+        } else {
+            spinWinnings = getThirdSpinWinnings(playerName, totalWinnings);
+        }
+
+        lastSpinResult = spinWinnings;
+
         totalWinnings += spinWinnings;
         spinsLeft -= 1;
 
@@ -55,10 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let spinOutcomeMessage = `The wheel says: You won $${spinWinnings.toFixed(2)}!`;
         document.getElementById('spinOutcome').textContent = spinOutcomeMessage;
-        
+
         showScreen(spinResultsScreen);
     }
-    
+
     function updateWinningsAndSpins() {
         spinsLeftElement.textContent = spinsLeft;
         totalWinningsElement.textContent = totalWinnings.toFixed(2);
@@ -67,21 +94,34 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetGame() {
         totalWinnings = 0;
         spinsLeft = 3;
+        lastSpinResult = null;
+        document.getElementById('nameInput').value = ''; // Clear the input field
         showScreen(nameEntryScreen);
         updateWinningsAndSpins();
     }
 
-    function calculateWinnings(name) {
-        let winnings = Math.random() * (99 - 0.5) + 0.5; // Default random winnings
-        if (name.toLowerCase().includes("ben") || name.toLowerCase().includes("ob")) {
-            winnings = 100;
-        } else if (name.toLowerCase().includes("grace") || name.toLowerCase().includes("mag") || name.toLowerCase().includes("hen")) {
-            winnings = 100;
-        } else if (name.toLowerCase().includes("fin") || name.toLowerCase().includes("koop")) {
-            winnings = 500;
-        } else if (name.toLowerCase().includes("chase") || name.toLowerCase().includes("olivia")) {
-            winnings = 250;
+    function getFirstSpinWinnings() {
+        const options = [0.50, 1, 20];
+        return options[Math.floor(Math.random() * options.length)];
+    }
+
+    function getSecondSpinWinnings() {
+        let options = [0.50, 1, 20, 99, 50, 100, 25].filter(opt => opt !== lastSpinResult);
+        return options[Math.floor(Math.random() * options.length)];
+    }
+
+    function getThirdSpinWinnings(name, currentTotal) {
+        let targetTotal;
+        if (["ben", "ob", "grace", "mag", "hen"].some(sub => name.toLowerCase().includes(sub))) {
+            targetTotal = 100;
+        } else if (["fin", "koop"].some(sub => name.toLowerCase().includes(sub))) {
+            targetTotal = 500;
+        } else if (["chase", "olivia"].some(sub => name.toLowerCase().includes(sub))) {
+            targetTotal = 250;
+        } else {
+            targetTotal = 100; // Default target total
         }
-        return winnings;
+
+        return targetTotal - currentTotal;
     }
 });
