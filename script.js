@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalWinningsElement = document.getElementById('totalWinnings');
     const spinWinningsElement = document.getElementById('spinWinnings');
     const wheel = document.getElementById('wheel'); // The wheel image
+    console.log("Script loaded");
 
     let playerName = '';
     let totalWinnings = 0;
