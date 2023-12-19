@@ -1,0 +1,16 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.screen {
+    display: none;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Additional styles go here */
