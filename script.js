@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalWinningsElement = document.getElementById('totalWinnings');
     const spinWinningsElement = document.getElementById('spinWinnings');
     const wheel = document.getElementById('wheel'); // The wheel image
-    showScreen(nameEntryScreen);
 
     let playerName = '';
     let totalWinnings = 0;
@@ -125,4 +124,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return targetTotal - currentTotal;
     }
+    showScreen(nameEntryScreen);
 });
