@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    showScreen(nameEntryScreen);
     const nameEntryScreen = document.getElementById('nameEntryScreen');
     const spinWheelScreen = document.getElementById('spinWheelScreen');
     const spinResultsScreen = document.getElementById('spinResultsScreen');
@@ -125,5 +126,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return targetTotal - currentTotal;
     }
-    showScreen(nameEntryScreen);
 });
