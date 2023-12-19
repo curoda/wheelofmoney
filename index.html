@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel of Money</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="nameEntryScreen" class="screen">
+    <h1>Wheel of Money</h1>
+    <label for="nameInput">What is your name?</label>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button id="submitName">Submit</button>
+</div>
+
+<div id="spinWheelScreen" class="screen hidden">
+    <h1>Welcome <span id="playerName"></span></h1>
+    <p>You have <span id="spinsLeft">3</span> spins remaining</p>
+    <p>Total winnings: $<span id="totalWinnings">0</span></p>
+    <button id="spinButton">SPIN</button>
+</div>
+
+<div id="spinResultsScreen" class="screen hidden">
+    <p><span id="spinOutcome"></span> says:</p>
+    <p>You won $<span id="spinWinnings">0</span>!</p>
+    <button id="nextSpin">Next Spin</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
