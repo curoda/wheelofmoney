@@ -39,3 +39,23 @@ button {
         width: 100%;
     }
 }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#wheel {
+    width: 300px; /* Adjust as needed for your layout */
+    height: auto;
+    transition: transform 4s ease-out; /* This can be adjusted for spin speed */
+}
+
+.spinning {
+    animation: spin 4s ease-out forwards;
+}
+
