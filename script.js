@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         lastSpinResult = spinWinnings;
 
         totalWinnings += spinWinnings;
-        spinsLeft -= 1;
 
         spinWinningsElement.textContent = spinWinnings.toFixed(2);
         updateWinningsAndSpins();
@@ -92,12 +91,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         showScreen(spinResultsScreen);
 
-        // Update button text based on spins left
-        if (spinsLeft > 1) {
-            document.getElementById('spinButton').textContent = `SPIN (${4 - spinsLeft} of 3)`;
-        } else {
+        // Update the button text for the next spin
+        if (spinsLeft === 3) {
+            document.getElementById('spinButton').textContent = 'SPIN (2 of 3)';
+        } else if (spinsLeft === 2) {
+            document.getElementById('spinButton').textContent = 'SPIN (3 of 3)';
+        } else if (spinsLeft === 1) {
             document.getElementById('spinButton').textContent = 'START OVER';
         }
+    
+        // Decrement spinsLeft after updating the button text
+        spinsLeft -= 1;
     }
 
     function updateWinningsAndSpins() {
