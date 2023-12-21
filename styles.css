@@ -18,7 +18,8 @@ body {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    color: #d32f2f; /* Christmas red */
+    color: #fff; /* White color for better visibility */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Shadow for text */
 }
 
 .screen {
@@ -99,9 +100,4 @@ button:hover {
     width: 100%;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
     padding: 20px 0;
-}
-
-h1, p, input, button {
-    color: #fff; /* White color for better visibility */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Shadow for text */
 }
