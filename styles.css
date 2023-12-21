@@ -64,6 +64,13 @@ button:hover {
     body, button {
         width: 100%;
     }
+    #overlay {
+        padding: 10px 0;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
 }
 
 @keyframes spin {
@@ -85,3 +92,16 @@ button:hover {
     animation: spin 4s ease-out forwards;
 }
 
+#overlay {
+    position: absolute;
+    top: 50%; /* Adjust as needed */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    padding: 20px 0;
+}
+
+h1, p, input, button {
+    color: #fff; /* White color for better visibility */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Shadow for text */
+}
