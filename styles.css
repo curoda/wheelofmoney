@@ -93,6 +93,7 @@ button:hover {
     animation: spin 4s ease-out forwards;
 }
 
+/*
 #overlay {
     position: absolute;
     top: 50%; /* Adjust as needed */
@@ -101,3 +102,4 @@ button:hover {
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
     padding: 20px 0;
 }
+*/
