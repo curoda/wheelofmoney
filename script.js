@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('spinButton').addEventListener('click', function() {
+        if (this.textContent === 'START OVER') {
+        resetGame();
+        return;
+        }
+        
         wheel.classList.add('spinning'); // Start the spin animation
 
         // Disable the button while spinning
@@ -86,6 +91,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('spinOutcome').textContent = spinOutcomeMessage;
 
         showScreen(spinResultsScreen);
+
+        // Update button text based on spins left
+        if (spinsLeft > 1) {
+            document.getElementById('spinButton').textContent = `SPIN (${4 - spinsLeft} of 3)`;
+        } else {
+            document.getElementById('spinButton').textContent = 'START OVER';
+        }
     }
 
     function updateWinningsAndSpins() {
@@ -100,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('nameInput').value = ''; // Clear the input field
         showScreen(nameEntryScreen);
         updateWinningsAndSpins();
+        document.getElementById('spinButton').textContent = 'SPIN (1 of 3)';
     }
 
     function getFirstSpinWinnings() {
