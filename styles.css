@@ -101,6 +101,7 @@ button:hover {
 #overlay {
     position: absolute;
     top: 45%; 
+    height: 55%;
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
