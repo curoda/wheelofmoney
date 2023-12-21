@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
         // Decrement spinsLeft after updating the button text
+        console.log("Spins Left:" spinsLeft)
         spinsLeft -= 1;
     }
 
