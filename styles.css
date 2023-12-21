@@ -96,10 +96,10 @@ button:hover {
 /*
 #overlay {
     position: absolute;
-    top: 50%; /* Adjust as needed */
+    top: 50%; 
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background: rgba(0, 0, 0, 0.5); 
     padding: 20px 0;
 }
 */
