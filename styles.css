@@ -37,7 +37,7 @@ h1 {
     margin: 10px 0;
     margin-bottom: 10px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     width: calc(100% - 22px); /* Adjust for padding */
     border: 2px solid #d32f2f;
     border-radius: 20px;
@@ -60,7 +60,7 @@ button:hover {
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
+@media (max-width: 100%) {
     body, button {
         width: 100%;
     }
@@ -76,7 +76,7 @@ button:hover {
 }
 
 #wheel {
-    width: 300px; /* Adjust as needed for your layout */
+    width: 90%; /* Adjust as needed for your layout */
     height: auto;
     transition: transform 4s ease-out; /* This can be adjusted for spin speed */
 }
