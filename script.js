@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastSpinResult = null;
 
     function showScreen(screen) {
+        console.log("in showScreen");
         nameEntryScreen.classList.add('hidden');
         spinWheelScreen.classList.add('hidden');
         spinResultsScreen.classList.add('hidden');
