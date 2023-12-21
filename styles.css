@@ -43,7 +43,7 @@ h3 {
     margin-bottom: 30px;
     padding: 10px;
     font-size: 20px;
-    width: calc(100% - 40px); /* Adjust for padding */
+    width: calc(100% - 60px); /* Adjust for padding */
     border: 2px solid #d32f2f;
     border-radius: 20px;
 }
