@@ -61,11 +61,6 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #388e3c;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
 /* Responsive Styles */
 @media (max-width: 100%) {
     body, button {
