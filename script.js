@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let spinOutcomeMessage = `The wheel says: You won $${spinWinnings.toFixed(2)}!`;
         document.getElementById('spinOutcome').textContent = spinOutcomeMessage;
 
+        updateResultVideo(spinWinnings);
         showScreen(spinResultsScreen);
 
         // Update the button text for the next spin
@@ -147,6 +148,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         return targetTotal - currentTotal;
+    }
+
+    function updateResultVideo(amountWon) {
+        const videoElement = document.getElementById('resultVideo');
+        const videoSources = {
+            "0.50": "path-to-video-for-50-cents.mp4",
+            "1": "path-to-video-for-1-dollar.mp4",
+            "20":
+            "99":
+            "50":
+            "100":
+            "25":
+            // Add paths for all amounts won
+        };
+    
+        // Update the video source
+        videoElement.src = videoSources[amountWon];
+        
+        // If you want to play the video with sound after a user interaction,
+        // you could remove the muted attribute and play the video
+        videoElement.muted = false;
+        videoElement.play();
     }
     showScreen(nameEntryScreen);
 });
