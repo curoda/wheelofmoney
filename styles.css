@@ -93,6 +93,7 @@ button {
     width: 90%; /* Adjust as needed for your layout */
     height: auto;
     transition: transform 8s ease-out; /* This can be adjusted for spin speed */
+    margin-bottom: 40px;
 }
 
 .spinning {
