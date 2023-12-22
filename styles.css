@@ -99,7 +99,6 @@ button:hover {
     animation: spin 4s ease-out forwards;
 }
 
-
 #overlay {
     position: absolute;
     top: 45%; 
@@ -108,4 +107,21 @@ button:hover {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
+
+#darkOverlay {
+    position: fixed; /* or 'absolute' if the parent is positioned */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Adjust the alpha for more or less darkness */
+    z-index: 10; /* Ensure it's above the background but below the content */
+}
+
+/* Make sure your wheel and other content are positioned above the overlay */
+#spinWheelScreen {
+    position: relative;
+    z-index: 20;
+}
+
 
