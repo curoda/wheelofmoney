@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter your name.');
             return;
         }
+        // Capitalize the first letter of each word in the name
+        playerName = playerName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
         playerNameElement.textContent = playerName;
         showScreen(spinWheelScreen);
         updateWinningsAndSpins();
