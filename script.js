@@ -153,14 +153,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateResultVideo(amountWon) {
         const videoElement = document.getElementById('resultVideo');
         const videoSources = {
-            "0.50": "path-to-video-for-50-cents.mp4",
-            "1": "path-to-video-for-1-dollar.mp4",
-            "20":
-            "99":
-            "50":
-            "100":
-            "25":
-            // Add paths for all amounts won
+            "0.50": "50cent.mp4",
+            "1": "dolla.mp4",
+            "20": "20.mp4",
+            "99": "99.mp4",
+            "50": "boat.mp4",
+            "100": "fancylike.mp4",
+            "25": "savedat.mp4",
         };
     
         // Update the video source
