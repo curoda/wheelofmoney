@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Re-enable the spin button
             document.getElementById('spinButton').removeAttribute('disabled');
-        }, 4000); // This should match the duration of the CSS animation
+        }, 8000); // This should match the duration of the CSS animation
     });
 
     document.getElementById('nextSpin').addEventListener('click', function() {
