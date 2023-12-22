@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
             "20": "20.mp4",
             "99": "99.mp4",
             "50": "boat.mp4",
-            "100": "fancylike.mp4",
-            "25": "savedat.mp4",
+            "100": "dmx.mp4",
+            "25": "fancylike.mp4",
         };
     
         // Update the video source
