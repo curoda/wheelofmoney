@@ -134,6 +134,7 @@ button {
     width: 100vw; /* Use vw and vh units to cover full viewport width */
     height: 100vh; /* Use vw and vh units to cover full viewport height */
     object-fit: cover;
+    z-index: 1;
     filter: brightness(0); /* Start with a dark image */
     transition: filter 2s ease-in-out; /* Smooth transition to reveal the image */
 }
@@ -156,6 +157,13 @@ button {
         height: auto;
     }
 }
+
+.content-overlay {
+    position: relative; /* position is required for z-index to take effect */
+    z-index: 2; /* Higher than the background image */
+}
+
+
 
 
 
