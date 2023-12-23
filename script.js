@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Call showSpinResult when the spinResultsScreen is shown
         if (screen === spinResultsScreen) {
-            showSpinResult(currentSpinWinnings); // Assuming currentSpinWinnings holds the last spin amount
+            showSpinResult(spinWinnings); // Assuming currentSpinWinnings holds the last spin amount
         }
     }
 
