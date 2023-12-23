@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
        // Default media for any amounts not listed
         const defaultImage = "taylor.jpg";
-        const defaultMessage = "Look what you made me do!  You won: $" + amountWon.toFixed(2) + ".  Total Christmas Cash: $" + totalWinnings + "."  MERRY CHRISTMAS!;
+        const defaultMessage = "Look what you made me do!  You won: $" + amountWon.toFixed(2) + ".  Total Christmas Cash: $" + totalWinnings + ".  MERRY CHRISTMAS!";
 
         const resultImage = document.getElementById('resultImage');
         const spinOutcomeElement = document.getElementById('spinOutcome');
