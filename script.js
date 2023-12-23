@@ -194,13 +194,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const resultImage = document.getElementById('resultImage');
         const spinOutcomeElement = document.getElementById('spinOutcome');
-    
-        // Convert amountWon to a string that matches the keys in the objects
-        const amountWonKey = amountWon.toFixed(2);
         
         // Use the images and messages from the objects, or the default if not found
-        resultImage.src = imageSources[amountWonKey] || defaultImage;
-        spinOutcomeElement.textContent = spinOutcomeMessages[amountWonKey] || defaultMessage;
+        resultImage.src = imageSources[amountWon] || defaultImage;
+        spinOutcomeElement.textContent = spinOutcomeMessages[amountWon] || defaultMessage;
     }
 
     showScreen(nameEntryScreen);
