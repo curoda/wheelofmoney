@@ -126,11 +126,13 @@ button {
 }
 
 .background-image {
-    position: absolute;
+    position: fixed; /* Use fixed position to cover the entire viewport */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    width: 100vw; /* Use vw and vh units to cover full viewport width */
+    height: 100vh; /* Use vw and vh units to cover full viewport height */
     object-fit: cover;
     filter: brightness(0); /* Start with a dark image */
     transition: filter 2s ease-in-out; /* Smooth transition to reveal the image */
@@ -138,6 +140,21 @@ button {
 
 .screen:not(.hidden) .background-image {
     filter: brightness(1); /* Reveal the image when the screen is active */
+}
+
+/* Use media queries to adjust for different aspect ratios if needed */
+@media (aspect-ratio: 16/9) {
+    .background-image {
+        width: auto;
+        height: 100vh;
+    }
+}
+
+@media (aspect-ratio: 9/16) {
+    .background-image {
+        width: 100vw;
+        height: auto;
+    }
 }
 
 
