@@ -135,5 +135,21 @@ button {
     z-index: -1;
 }
 
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0); /* Start with a dark image */
+    transition: filter 2s ease-in-out; /* Smooth transition to reveal the image */
+}
+
+.screen:not(.hidden) .background-image {
+    filter: brightness(1); /* Reveal the image when the screen is active */
+}
+
+
 
 
