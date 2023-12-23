@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('spinButton').textContent = 'SPIN (3 of 3)';
         } else if (spinsLeft === 1) {
             document.getElementById('spinButton').textContent = 'START OVER';
+            document.getElementById('nextSpin').textContent = 'TRY AGAIN';
         } else if (spinsLeft === 0) {
         // After the third spin, change the button text to "TRY AGAIN"
         document.getElementById('nextSpin').textContent = 'TRY AGAIN';
