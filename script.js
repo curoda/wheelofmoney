@@ -20,11 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         spinWheelScreen.classList.add('hidden');
         spinResultsScreen.classList.add('hidden');
         screen.classList.remove('hidden');
-
-        // Call showSpinResult when the spinResultsScreen is shown
-        if (screen === spinResultsScreen) {
-            showSpinResult(spinWinnings); // Assuming currentSpinWinnings holds the last spin amount
-        }
     }
 
     document.getElementById('submitName').addEventListener('click', function() {
@@ -98,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('spinOutcome').textContent = spinOutcomeMessage;
 
         //updateResultVideo(spinWinnings);
-        //updateResultMedia(spinWinnings);
+        showSpinResult(spinWinnings);
         showScreen(spinResultsScreen);
 
         // Update the button text for the next spin
