@@ -92,8 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let spinOutcomeMessage = `The wheel says: You won $${spinWinnings.toFixed(2)}!`;
         document.getElementById('spinOutcome').textContent = spinOutcomeMessage;
 
-        //updateResultVideo(spinWinnings);
-        showSpinResult(spinWinnings);
+        updateResultMedia(spinWinnings);
 
         setTimeout(function() {
             const resultAudio = document.getElementById('resultAudio');
@@ -159,28 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return targetTotal - currentTotal;
     }
 
-    // We're likely not going to use this function
-    function updateResultVideo(amountWon) {
-        const videoElement = document.getElementById('resultVideo');
-        const videoSources = {
-            "0.50": "50cent.mp4",
-            "1": "dolla.mp4",
-            "20": "20.mp4",
-            "99": "99.mp4",
-            "50": "boat.mp4",
-            "100": "dmx.mp4",
-            "25": "fancylike.mp4",
-        };
-    
-        // Update the video source
-        videoElement.src = videoSources[amountWon];
-        
-        // If you want to play the video with sound after a user interaction,
-        // you could remove the muted attribute and play the video
-        videoElement.muted = false;
-        videoElement.play();
-    }
-
     function updateResultMedia(amountWon) {
         console.log("in updateResultMedia, amount won:", amountWon);
         const imageSources = {
@@ -193,31 +170,10 @@ document.addEventListener('DOMContentLoaded', function() {
             "25": "fancylike.jpg",
         };
     
-        const audioSources = {
-            "0.5": "50cent.wav",
-            "1": "dolla.wav",
-            "20": "20.wav",
-            "99": "99.wav",
-            "50": "boat.wav",
-            "100": "dmx.wav",
-            "25": "fancylike.wav",
-        };
-    
         const resultImage = document.getElementById('resultImage');
-        const resultAudio = document.getElementById('resultAudio');
     
         resultImage.src = imageSources[amountWon];
-        resultAudio.src = audioSources[amountWon];
     }
-
-    function showSpinResult(amountWon) {
-        updateResultMedia(amountWon);
-    
-        // Play the audio
-        const resultAudio = document.getElementById('resultAudio');
-        resultAudio.play();
-    }
-
 
     showScreen(nameEntryScreen);
 });
