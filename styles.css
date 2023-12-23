@@ -159,7 +159,14 @@ button {
 }
 
 .content-overlay {
-    position: relative; /* position is required for z-index to take effect */
+    position: absolute; /* position is required for z-index to take effect */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center the text */
+    box-sizing: border-box; /* Include padding in the box's width */
     z-index: 2; /* Higher than the background image */
 }
 
