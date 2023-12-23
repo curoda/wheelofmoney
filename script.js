@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 8000); // This should match the duration of the CSS animation
     });
 
-    document.getElementById('startOver').addEventListener('click', function() {
+    document.getElementById('nextSpin').addEventListener('click', function() {
         if (spinsLeft > 0) {
             showScreen(spinWheelScreen);
         } else {
@@ -79,11 +79,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function spinWheel() {
+       /*
         if (spinsLeft <= 0) {
             alert('No spins left. Thank you for playing!');
             resetGame();
             return;
         }
+        */
 
         let spinWinnings;
         if (spinsLeft === 3) {
@@ -114,7 +116,10 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('spinButton').textContent = 'SPIN (3 of 3)';
         } else if (spinsLeft === 1) {
             document.getElementById('spinButton').textContent = 'START OVER';
-        }
+        } else if (spinsLeft === 0) {
+        // After the third spin, change the button text to "TRY AGAIN"
+        document.getElementById('nextSpin').textContent = 'TRY AGAIN';
+        }    
     
         // Decrement spinsLeft after updating the button text
         console.log("Spins Left:", spinsLeft);
