@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         totalWinnings += spinWinnings;
 
-        spinWinningsElement.textContent = spinWinnings.toFixed(2);
+        //spinWinningsElement.textContent = spinWinnings.toFixed(2);
         
 
         let spinOutcomeMessage = `The wheel says: You won $${spinWinnings.toFixed(2)}!`;
