@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalWinnings = 0;
     let spinsLeft = 3;
     let lastSpinResult = null;
-    let thirdSpinWinnings = 0;
 
     function showScreen(screen) {
         console.log("in showScreen")
@@ -161,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             targetTotal = 100; // Default target total
         }
-        thirdSpinWinnings = targetTotal - currentTotal;
+    
         return targetTotal - currentTotal;
     }
 
@@ -190,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
        // Default media for any amounts not listed
         const defaultImage = "taylor.jpg";
-        const defaultMessage = "Look what you made me do!  You won: " + thirdSpinWinnings;
+        const defaultMessage = "Look what you made me do!  You won: " + amountWon;
 
         const resultImage = document.getElementById('resultImage');
         const spinOutcomeElement = document.getElementById('spinOutcome');
