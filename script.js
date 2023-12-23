@@ -28,6 +28,19 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter your name.');
             return;
         }
+
+        playerName = document.getElementById('nameInput').value.toLowerCase(); // Convert to lowercase for comparison
+        const allowedStrings = ["ben", "ob", "grac", "mag", "hen", "fin", "koop", "chas", "oli"];
+        
+        // Check if the entered name contains any of the allowed strings
+        const isAllowed = allowedStrings.some(sub => playerName.includes(sub));
+        
+        if (playerName.trim() === '' || !isAllowed) {
+            // Name is empty or not allowed
+            alert("Santa has you on the naughty list this year. You are not allowed to spin the wheel.");
+            return;
+        }
+        
         // Capitalize the first letter of each word in the name
         playerName = playerName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
@@ -145,11 +158,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getThirdSpinWinnings(name, currentTotal) {
         let targetTotal;
-        if (["ben", "ob", "grace", "mag", "hen"].some(sub => name.toLowerCase().includes(sub))) {
+        if (["ben", "ob", "grac", "mag", "hen"].some(sub => name.toLowerCase().includes(sub))) {
             targetTotal = 100;
         } else if (["fin", "koop"].some(sub => name.toLowerCase().includes(sub))) {
             targetTotal = 500;
-        } else if (["chase", "olivia"].some(sub => name.toLowerCase().includes(sub))) {
+        } else if (["chas", "oli"].some(sub => name.toLowerCase().includes(sub))) {
             targetTotal = 250;
         } else {
             targetTotal = 100; // Default target total
