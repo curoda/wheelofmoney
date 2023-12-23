@@ -169,10 +169,27 @@ document.addEventListener('DOMContentLoaded', function() {
             "100": "dmx.jpg",
             "25": "fancylike.jpg",
         };
+
+        const spinOutcomeMessages = {
+            "0.5": "Good start! Keep spinning for more!",
+            "1": "Nice! You've won a dollar!",
+            "20": "Wow! You're up $20!",
+            "99": "Incredible! You've won $99!",
+            "50": "Great! You've won $50!",
+            "100": "Amazing! You've hit $100!",
+            "25": "Sweet! You've won $25!",
+            // ... other amounts with their messages
+        };
     
         const resultImage = document.getElementById('resultImage');
-    
         resultImage.src = imageSources[amountWon];
+
+        // Get the message for the current outcome
+        const message = spinOutcomeMessages[winningsAsString] || "Spin to win!"; // Default message
+    
+        // Update the spinOutcome element with the message
+        const spinOutcomeElement = document.getElementById('spinOutcome');
+        spinOutcomeElement.textContent = message;
     }
 
     showScreen(nameEntryScreen);
