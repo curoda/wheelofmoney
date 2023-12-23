@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resultImage.src = imageSources[amountWon];
 
         // Convert the number to a string that matches the keys in your messages object
-        const winningsAsString = spinWinnings.toFixed(2);
+        const winningsAsString = amountWon.toFixed(2);
         
         // Get the message for the current outcome
         const message = spinOutcomeMessages[winningsAsString] || "Spin to win!"; // Default message
