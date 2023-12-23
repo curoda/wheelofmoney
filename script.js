@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateResultMedia(amountWon) {
         console.log("in updateResultMedia, amount won:", amountWon);
         const imageSources = {
-            "0.50": "50cent.jpg",
+            "0.5": "50cent.jpg",
             "1": "dolla.jpg",
             "20": "20.jpg",
             "99": "99.jpg",
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     
         const audioSources = {
-            "0.50": "50cent.wav",
+            "0.5": "50cent.wav",
             "1": "dolla.wav",
             "20": "20.wav",
             "99": "99.wav",
