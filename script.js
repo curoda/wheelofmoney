@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
        // Default media for any amounts not listed
         const defaultImage = "taylor.jpg";
-        const defaultMessage = "Look what you made me do!  You won: " + amountWon;
+        const defaultMessage = "Look what you made me do!  You won: $" + amountWon.toFixed(2);
 
         const resultImage = document.getElementById('resultImage');
         const spinOutcomeElement = document.getElementById('spinOutcome');
