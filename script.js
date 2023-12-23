@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalWinnings = 0;
     let spinsLeft = 3;
     let lastSpinResult = null;
+    let thirdSpinWinnings = 0;
 
     function showScreen(screen) {
         console.log("in showScreen")
@@ -106,14 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('spinOutcome').textContent = spinOutcomeMessage;
 
         updateResultMedia(spinWinnings);
-
-        setTimeout(function() {
-            const resultAudio = document.getElementById('resultAudio');
-            if (resultAudio) {
-                resultAudio.play();
-            }
-        }, 8000); // 8000 milliseconds for 8 seconds
-        
         showScreen(spinResultsScreen);
 
         // Update the button text for the next spin
@@ -140,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         totalWinnings = 0;
         spinsLeft = 3;
         lastSpinResult = null;
+        thirdSpinWinnings = 0;
         document.getElementById('nameInput').value = ''; // Clear the input field
         showScreen(nameEntryScreen);
         updateWinningsAndSpins();
@@ -167,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             targetTotal = 100; // Default target total
         }
-
+        thirdSpinWinnings = targetTotal - currentTotal;
         return targetTotal - currentTotal;
     }
 
@@ -194,12 +188,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // ... other amounts with their messages
         };
     
+       // Default media for any amounts not listed
+        const defaultImage = "taylor.jpg";
+        const defaultMessage = "Look what you made me do!  You won: " + thirdSpinWinnings;
+
         const resultImage = document.getElementById('resultImage');
-        resultImage.src = imageSources[amountWon];
-    
-        // Update the spinOutcome element with the message
         const spinOutcomeElement = document.getElementById('spinOutcome');
-        spinOutcomeElement.textContent = spinOutcomeMessages[amountWon];
+    
+        // Convert amountWon to a string that matches the keys in the objects
+        const amountWonKey = amountWon.toFixed(2);
+        
+        // Use the images and messages from the objects, or the default if not found
+        resultImage.src = imageSources[amountWonKey] || defaultImage;
+        spinOutcomeElement.textContent = spinOutcomeMessages[amountWonKey] || defaultMessage;
     }
 
     showScreen(nameEntryScreen);
