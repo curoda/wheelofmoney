@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "99": "99.jpg",
             "50": "boat.jpg",
             "100": "dmx.jpg",
-            "25": "fancylike.jpg"
+            "25": "fancylike.jpg",
         };
     
         const audioSources = {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "99": "99.wav",
             "50": "boat.wav",
             "100": "dmx.wav",
-            "25": "fancylike.wav"
+            "25": "fancylike.wav",
         };
     
         const resultImage = document.getElementById('resultImage');
