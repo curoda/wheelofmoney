@@ -182,21 +182,21 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         const spinOutcomeMessages = {
-            "0.5": "Good start! Keep spinning for more!",
-            "1": "Nice! You've won a dollar!",
-            "20": "Wow! You're up $20!",
-            "99": "Incredible! You've won $99!",
-            "50": "Great! You've won $50!",
-            "100": "Amazing! You've hit $100!",
-            "25": "Sweet! You've won $25!",
+            "0.5": "Go shorty, it's your birthday!  Saint 50 Cent has brought you 50¢.  Good for you.",
+            "1": "Wise man Wyclef says 'I'ma tell you like Wu told me, Cash Rules Everything Around Me, Singin' dollar, dollar bill, y'all'.  You have been awarded $1.",
+            "20": "Macklemore might pop some tags with only twenty dollars in his pocket. You've just been awarded $20 as well.  This is fucking awesome.",
+            "99": "Jay-Z does not feel bad for you, son.  You don't have 99 problems, you have 99 solutions.  Congrats on getting $99.",
+            "50": "Tidings from T-Pain!  I bet you never thought you'd be on a boat (it's a great big watery road).  In any case Poseidon is looking at you with $50 in your hand.  Congrats.",
+            "100": "Saint DMX brings tidings.  He's gon' give it to ya (what).  Knock knock, open up the door, it's real that you just won $100.",
+            "25": "Wise man Walker Hayes wants you to be fancy like Applebee's on a date night.  Here's $25.  Enough for a bourbon street steak and an oreo shake.",
             // ... other amounts with their messages
         };
     
        // Default media for any amounts not listed
         const defaultImage = "taylor.jpg";
-        const defaultMessage = "Look what you made me do! You won: $" + amountWon.toFixed(2) + 
+        const defaultMessage = "I got a blank check baby, and I'll write your name. You won: $" + amountWon.toFixed(2) + 
                                "<br>Total Christmas Cash: $" + totalWinnings + 
-                               "<br>MERRY CHRISTMAS!";
+                               "<br>MERRY CHRISTMAS from Curt and Eve!";
 
         const resultImage = document.getElementById('resultImage');
         const spinOutcomeElement = document.getElementById('spinOutcome');
