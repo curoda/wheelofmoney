@@ -70,11 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 8000); // This should match the duration of the CSS animation
     });
 
-    document.getElementById('nextSpin').addEventListener('click', function() {
+    document.getElementById('startOver').addEventListener('click', function() {
         if (spinsLeft > 0) {
             showScreen(spinWheelScreen);
         } else {
-            alert('All spins used. Thank you for playing!');
             resetGame();
         }
     });
