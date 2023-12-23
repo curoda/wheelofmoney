@@ -92,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let spinOutcomeMessage = `The wheel says: You won $${spinWinnings.toFixed(2)}!`;
         document.getElementById('spinOutcome').textContent = spinOutcomeMessage;
 
-        updateResultVideo(spinWinnings);
+        //updateResultVideo(spinWinnings);
+        updateResultMedia(spinWinnings);
         showScreen(spinResultsScreen);
 
         // Update the button text for the next spin
@@ -150,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return targetTotal - currentTotal;
     }
 
+    // We're likely not going to use this function
     function updateResultVideo(amountWon) {
         const videoElement = document.getElementById('resultVideo');
         const videoSources = {
@@ -170,5 +172,35 @@ document.addEventListener('DOMContentLoaded', function() {
         videoElement.muted = false;
         videoElement.play();
     }
+
+    function updateResultMedia(amountWon) {
+        const imageSources = {
+            "0.50": "50cent.jpg",
+            "1": "dolla.jpg",
+            "20": "20.jpg",
+            "99": "99.jpg",
+            "50": "boat.jpg",
+            "100": "dmx.jpg",
+            "25": "fancylike.jpg"
+        };
+    
+        const audioSources = {
+            "0.50": "50cent.wav",
+            "1": "dolla.wav",
+            "20": "20.wav",
+            "99": "99.wav",
+            "50": "boat.wav",
+            "100": "dmx.wav",
+            "25": "fancylike.wav"
+        };
+    
+        const resultImage = document.getElementById('resultImage');
+        const resultAudio = document.getElementById('resultAudio');
+    
+        resultImage.src = imageSources[amountWon];
+        resultAudio.src = audioSources[amountWon];
+    }
+
+
     showScreen(nameEntryScreen);
 });
