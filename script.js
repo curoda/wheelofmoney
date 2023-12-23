@@ -94,6 +94,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         //updateResultVideo(spinWinnings);
         showSpinResult(spinWinnings);
+
+        setTimeout(function() {
+            const resultAudio = document.getElementById('resultAudio');
+            if (resultAudio) {
+                resultAudio.play();
+            }
+        }, 8000); // 8000 milliseconds for 8 seconds
+        
         showScreen(spinResultsScreen);
 
         // Update the button text for the next spin
