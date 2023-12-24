@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showScreen(nameEntryScreen);
         updateWinningsAndSpins();
         document.getElementById('spinButton').textContent = 'SPIN (1 of 3)';
+        document.getElementById('nextSpin').textContent = 'NEXT SPIN';
     }
 
     function getFirstSpinWinnings() {
