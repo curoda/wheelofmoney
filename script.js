@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const defaultImage = "taylor.jpg";
         const defaultMessage = "I got a blank check baby, and I'll write your name. You won: $" + amountWon.toFixed(2) + 
                                "<br><br>Total Christmas Cash: $" + totalWinnings + 
-                               "<br><br>MERRY CHRISTMAS from Curt and Eve!";
+                               "<br><br>MERRY CHRISTMAS from Curt and Eve! You can take the cash or try again...";
 
         const resultImage = document.getElementById('resultImage');
         const spinOutcomeElement = document.getElementById('spinOutcome');
