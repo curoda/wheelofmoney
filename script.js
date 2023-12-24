@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "1": "Wise man Wyclef says 'I'ma tell you like Wu told me, Cash Rules Everything Around Me, Singin' dollar, dollar bill, y'all'.  You have been awarded $1.",
             "20": "Macklemore might pop some tags with only twenty dollars in his pocket. You've just been awarded $20 as well.  This is frigging awesome.",
             "99": "Jay-Z does not feel bad for you, son.  You don't have 99 problems, you have 99 solutions.  Congrats on getting $99.",
-            "50": "Tidings from T-Pain!  I bet you never thought you'd be on a boat (it's a great big watery road).  In any case Poseidon is looking at you with $50 in your hand.  Congrats.",
+            "50": "Tidings from T-Pain!  I bet you never thought you'd be on a boat for Christmas (it's a great big watery road).  In any case Poseidon is looking at you with $50 in your hand.  Congrats.",
             "100": "Saint DMX brings tidings.  He's gon' give it to ya (what).  Knock knock, open up the door, it's real that you just won $100.",
             "25": "Wise man Walker Hayes wants you to be fancy like Applebee's on a date night.  Here's $25.  Enough for a bourbon street steak and an oreo shake.",
             // ... other amounts with their messages
