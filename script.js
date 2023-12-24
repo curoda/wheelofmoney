@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             targetTotal = 100; // Default target total
         }
-    
+        console.log("in getThirdSpinWinnings, targetTotal: ", targetTotal);
         return targetTotal - currentTotal;
     }
 
