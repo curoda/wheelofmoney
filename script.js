@@ -193,10 +193,17 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     
        // Default media for any amounts not listed
-        const defaultImage = "taylor.jpg";
-        const defaultMessage = "I got a blank check baby, and I'll write your name. You won: $" + amountWon.toFixed(2) + 
+        if (amountWon <= 0) {
+            defaultImage = "grinch.jpg";
+            defaultMessage = "You're a mean one, Mr. Grinch! The Grinch made off with $" + amountWon.toFixed(2) +
+                             "<br><br>Total Christmas Cash: $" + totalWinnings +
+                             "<br><br>MERRY CHRISTMAS from Curt and Eve! You can take the cash or try again...";
+        } else {
+            const defaultImage = "taylor.jpg";
+            const defaultMessage = "I got a blank check baby, and I'll write your name. You won: $" + amountWon.toFixed(2) + 
                                "<br><br>Total Christmas Cash: $" + totalWinnings + 
                                "<br><br>MERRY CHRISTMAS from Curt and Eve! You can take the cash or try again...";
+        }
 
         const resultImage = document.getElementById('resultImage');
         const spinOutcomeElement = document.getElementById('spinOutcome');
