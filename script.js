@@ -193,7 +193,9 @@ document.addEventListener('DOMContentLoaded', function() {
             "25": "Wise man Walker Hayes wants you to be fancy like Applebee's on a date night.  Here's $25.  Enough for a bourbon street steak and an oreo shake.",
             // ... other amounts with their messages
         };
-    
+
+        let defaultImage, defaultMessage;
+        
        // Default media for any amounts not listed
         if (amountWon <= 0) {
             defaultImage = "grinch.jpg";
