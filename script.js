@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getFirstSpinWinnings() {
-        const options = [0.50, 1, 20];
+        const options = [0.50, 1, 20, 99, 50, 100, 25];
         return options[Math.floor(Math.random() * options.length)];
     }
 
