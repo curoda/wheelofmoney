@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalWinnings = 0;
     let spinsLeft = 3;
     let lastSpinResult = null;
+    let targetTotal = 0;
 
     function showScreen(screen) {
         console.log("in showScreen")
@@ -143,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateWinningsAndSpins();
         document.getElementById('spinButton').textContent = 'SPIN (1 of 3)';
         document.getElementById('nextSpin').textContent = 'NEXT SPIN';
+        targetTotal = 0;
     }
 
     function getFirstSpinWinnings() {
@@ -156,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getThirdSpinWinnings(name, currentTotal) {
-        let targetTotal;
         if (["ben", "ob", "grac", "mag", "hen"].some(sub => name.toLowerCase().includes(sub))) {
             targetTotal = 100;
         } else if (["fin", "koop"].some(sub => name.toLowerCase().includes(sub))) {
