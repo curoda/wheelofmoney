@@ -157,7 +157,7 @@ button {
 
 .content-overlay {
     position: absolute; /* position is required for z-index to take effect */
-    bottom: 0;
+    bottom: 100;
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
