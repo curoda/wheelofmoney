@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                              "<br><br>MERRY CHRISTMAS from Curt and Eve! You can take the cash or try again...";
         } else {
             defaultImage = "karate.webp";
-            defaultMessage = "It was a hard fought battle. You won: $" + amountWon.toFixed(2) + 
+            defaultMessage = "It was a hard fought battle, and you kicked the Christmas out of your opponent. You win: $" + amountWon.toFixed(2) + 
                                "<br><br>Total Christmas Cash: $" + totalWinnings + 
                                "<br><br>MERRY CHRISTMAS from Curt and Eve! You can take the cash or try again...";
         }
