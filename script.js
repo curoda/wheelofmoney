@@ -158,12 +158,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function getThirdSpinWinnings(name, currentTotal) {
         if (["ben", "ob", "grac", "mag", "hen"].some(sub => name.toLowerCase().includes(sub))) {
             targetTotal = 100;
-        } else if (["fin", "koop"].some(sub => name.toLowerCase().includes(sub))) {
+        } else if (["fin", "koop", "oli"].some(sub => name.toLowerCase().includes(sub))) {
+            targetTotal = 1.5;
+        } else if (["chas"].some(sub => name.toLowerCase().includes(sub))) {
             targetTotal = 500;
-        } else if (["chas", "oli"].some(sub => name.toLowerCase().includes(sub))) {
-            targetTotal = 250;
         } else {
-            targetTotal = 100; // Default target total
+            targetTotal = 1.32; // Default target total
         }
         console.log("in getThirdSpinWinnings, targetTotal: ", targetTotal);
         return targetTotal - currentTotal;
@@ -172,23 +172,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateResultMedia(amountWon) {
         console.log("in updateResultMedia, amount won:", amountWon);
         const imageSources = {
-            "0.5": "50cent.jpg",
-            "1": "dolla.jpg",
-            "20": "20.jpg",
-            "99": "99.jpg",
-            "50": "boat.jpg",
-            "100": "dmx.jpg",
-            "25": "fancylike.jpg",
+            "0.5": "sumo.webp",
+            "1": "unicorn.webp",
+            "20": "beach.webp",
+            "99": "reindeer.webp",
+            "50": "platy.webp",
+            "100": "grinch.webp",
+            "25": "otter.webp",
         };
 
         const spinOutcomeMessages = {
-            "0.5": "Go shorty, it's your birthday!  Saint 50 Cent has brought you 50¢.  Good for you.",
-            "1": "Wise man Wyclef says 'I'ma tell you like Wu told me, Cash Rules Everything Around Me, Singin' dollar, dollar bill, y'all'.  You have been awarded $1.",
-            "20": "Macklemore might pop some tags with only twenty dollars in his pocket. You've just been awarded $20 as well.  This is frigging awesome.",
-            "99": "Jay-Z does not feel bad for you, son.  You don't have 99 problems, you have 99 solutions.  Congrats on getting $99.",
-            "50": "Tidings from T-Pain!  I bet you never thought you'd be on a boat for Christmas (it's a great big watery road).  In any case Poseidon is looking at you with $50 in your hand.  Congrats.",
-            "100": "Saint DMX brings tidings.  He's gon' give it to ya (what).  Knock knock, open up the door, it's real that you just won $100.",
-            "25": "Wise man Walker Hayes wants you to be fancy like Applebee's on a date night.  Here's $25.  Enough for a bourbon street steak and an oreo shake.",
+            "0.5": "The sumo babies brought you a gift.  Bad news, they're poor.  You get 50 cents.",
+            "1": "Did the penguin deserve this, or is the unicorn just being a jerk? In any case, the elves brought you a dollar.",
+            "20": "Bet you never saw Santa with his shirt off.  Jacked Santa brought you a crisp $20.",
+            "99": "You might be asking, 'Why is this reindeer wearing a bikini?' She's on vacation living her best life.  Stop judging.  She brought you $99. ",
+            "50": "Your visit to the Platypus bartender is fortuitous.  You get some local gossip and $50.",
+            "100": "You probably didn't want to see this, but you did.  You get $100 for your troubles.",
+            "25": "The otter and her gummy bunnies bring you good tidings...and $25.",
             // ... other amounts with their messages
         };
 
@@ -201,8 +201,8 @@ document.addEventListener('DOMContentLoaded', function() {
                              "<br><br>Total Christmas Cash: $" + totalWinnings +
                              "<br><br>MERRY CHRISTMAS from Curt and Eve! You can take the cash or try again...";
         } else {
-            defaultImage = "taylor.jpg";
-            defaultMessage = "I got a blank check baby, and I'll write your name. You won: $" + amountWon.toFixed(2) + 
+            defaultImage = "karate.webp";
+            defaultMessage = "It was a hard fought battle. You won: $" + amountWon.toFixed(2) + 
                                "<br><br>Total Christmas Cash: $" + totalWinnings + 
                                "<br><br>MERRY CHRISTMAS from Curt and Eve! You can take the cash or try again...";
         }
